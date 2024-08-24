@@ -29,8 +29,14 @@ public class OrderServiceimp implements OrderService{
     }
 
     @Override
-    public Order update(Order order){
-        return orderRepository.save(order);
+    public Order update(Long id, Order order){
+        Order orderTmp = orderRepository.findById(id).orElseThrow(()->new RuntimeException("Order not find"));
+        orderTmp.setCustomers(order.getCustomers());
+        orderTmp.setProduct(order.getProduct());
+        orderTmp.setOrderDate(order.getOrderDate());
+        orderTmp.setQuantity(order.getQuantity());
+
+        return orderRepository.save(orderTmp);
 
     }
     @Override

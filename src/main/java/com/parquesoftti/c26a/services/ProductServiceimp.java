@@ -13,6 +13,7 @@ public class ProductServiceimp implements ProductService {
 
     final ProductRepository productRepository;
 
+
     @Override
     public List<Product> findAll(){
         return productRepository.findAll();
@@ -29,8 +30,12 @@ public class ProductServiceimp implements ProductService {
 
     }
     @Override
-    public Product update(Product product){
-        return productRepository.save(product);
+    public Product update(Long id, Product product){
+        Product productTmp = productRepository.findById(id).orElseThrow(()->new RuntimeException("Product not find"));
+        productTmp.setProduct_name(product.getProduct_name());
+        productTmp.setPrice(product.getPrice());
+
+        return productRepository.save(productTmp);
     }
     @Override
     public void delete(Long id){

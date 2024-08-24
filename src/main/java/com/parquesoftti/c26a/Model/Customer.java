@@ -1,12 +1,12 @@
 package com.parquesoftti.c26a.Model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
+@Setter
+@Getter
 @Table(name = "customers")
 @AllArgsConstructor
 @NoArgsConstructor

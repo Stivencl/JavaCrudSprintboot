@@ -15,14 +15,15 @@ import java.time.LocalDateTime;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private  Long orderId;
+
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
-  private  Long orderId;
-  private  Customer customers;
+    private  Customer customers;
+
     @ManyToOne
     @JoinColumn(name = "product_id", nullable = false)
-  private  Product product;
-
-  private LocalDateTime orderDate;
-  private  Integer quantity;
+    private  Product product;
+    private LocalDateTime orderDate;
+    private  Integer quantity;
 }
