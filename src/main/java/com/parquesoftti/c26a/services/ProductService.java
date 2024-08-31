@@ -9,5 +9,5 @@ public interface ProductService {
     public Product findById(Long id);
     public Product save(Product product);
     public Product update( Long id, Product product);
-    public void  delete (Long id);
+    public void  delete(Long id);
 }

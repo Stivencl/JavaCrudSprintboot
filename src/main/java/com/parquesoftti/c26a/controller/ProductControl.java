@@ -28,12 +28,12 @@ public class ProductControl {
         return productService.save(product);
     }
 
-    @PostMapping("/id")
+    @DeleteMapping("/{id}")
     public void  delete(@PathVariable Long id){
         productService.delete(id);
     }
 
-    @PutMapping("{/id}")
+    @PutMapping("/{id}")
     public Product update(@PathVariable Long id, @RequestBody Product product){
        return productService.update(id, product);
     }

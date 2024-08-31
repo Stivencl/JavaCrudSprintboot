@@ -29,12 +29,12 @@ public class OrderControl {
         return orderService.save(order);
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         orderService.delete(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public Order update(@PathVariable Long id, @RequestBody Order order){
         return orderService.update(id, order);
 

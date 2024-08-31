@@ -29,12 +29,12 @@ public class CustomerControl {
         return  customerService.save(customer);
     }
 
-    @PostMapping("/{id}")
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable Long id){
         customerService.delete(id);
     }
 
-    @PutMapping("{id}")
+    @PutMapping("/{id}")
     public Customer update(@PathVariable Long id, @RequestBody Customer customer){
         return  customerService.update(id, customer);
 
